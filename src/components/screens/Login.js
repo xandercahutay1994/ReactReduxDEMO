@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
 class Login extends Component{
@@ -27,10 +28,29 @@ class Login extends Component{
                         </div>
                     </div>
                 </div>
+=======
+import React, {Component} from 'react';
+
+export default class Login extends Component{
+
+    render(){
+        return(
+            <div className="container mt-5">
+                <h1 className="text-center"> Login </h1>
+                <button
+                    onClick={this.updateClick}
+                    className="btn btn-primary col-md-5 center"
+                >
+                Click Me!
+                </button>
+>>>>>>> 508c4d6981de5155089e06601028d887b29c6a8d
             </div>
         )
     }
 }
+<<<<<<< HEAD
 
 
 export default Login;
+=======
+>>>>>>> 508c4d6981de5155089e06601028d887b29c6a8d
