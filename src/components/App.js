@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {
+    BrowserRouter as Router, 
+    Route, 
+    browserHistory
+} from 'react-router-dom';
+import Payment from './screens/Payment/Payment';
+import Student from './screens/Student/Student';
+import AddStudent from './screens/Student/AddStudent';
+import NavigationHeader from './screens/Navigation';
 
-class App extends React.Component{
-
-    constructor(){
-        super()
-
-        this.state = {
-
-        }
-    }
+export default class App extends Component{
 
     render(){
         return( 
-            <div>
-                <h1> My React</h1> 
-            </div>
+            <Router history={browserHistory}>
+                <div className="container">
+                    {/* Header for all pages */}
+                    <NavigationHeader />
+
+                    {/* Route list */}
+                    <Route path="/" component={Student} exact/> 
+                    <Route path="/payment" component={Payment}/>
+                    <Route path="/addStudent" component={AddStudent}/>
+                </div>
+            </Router>
         )
     }
 }
-
-export default App;

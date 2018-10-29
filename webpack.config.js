@@ -5,10 +5,16 @@ module.exports = {
     entry: './src/index.js', // react entry file, this will be compiled including import components to DIST folder
     output: { // where I want my compile code to go, just 1 JS file
         path: path.join(__dirname, '/dist'), // dirname => current directory
-        filename: 'index_bundle.js'
+        filename: 'index_bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                include: /node_modules/,
+                loaders: ['style-loader', 'css-loader'],
+            },
             {   // this will look a JS file for babel to compile
                 test: /\.js$/,
                 exclude: /node_modules/,
